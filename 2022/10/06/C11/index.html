@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>2022.10.5笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="无详可讲">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022.10.5笔记">
+<meta property="og:url" content="http://example.com/2022/10/06/C11/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="无详可讲">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-05T17:10:36.653Z">
+<meta property="article:modified_time" content="2022-10-05T15:53:13.333Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C11" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/06/C11/" class="article-date">
+  <time class="dt-published" datetime="2022-10-05T17:10:36.653Z" itemprop="datePublished">2022-10-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      2022.10.5笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>无详可讲</p>
+<span id="more"></span>
+
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="库函数"><a href="#库函数" class="headerlink" title="库函数"></a>库函数</h3><p>当我们频繁使用一个功能时，便可将这个函数编入库函数。一般通过include引用<br>库函数可分为<br>IO函数<br>字符串操作函数<br>字符操作函数<br>内存操作函数<br>时间日期函数<br>数学函数<br>其它函数</p>
+<h4 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h4><p>自定义函数有函数名，返回值类型和函数参数<br>C 库函数 char *strcpy(char *dest, const char *src) 把 src 所指向的字符串复制到 dest。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">	char arr1[20] = &#123;0&#125;;</span><br><span class="line">	char arr2[] = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">	strcpy(arr1,arr2);  //需引用string，将arr2的值复制并替换arr1</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,arr1);</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>char *strcpy(char *strDestination,const char *strSource);<br>上述中char是函数的返回类型，strcpy是函数名，括号内为函数的参数<br>自定义和库函数一样有函数名，返回值类型与参数，但是这些都需要自己设计。库函数中都是提前设计好可以直接引用的函数。<br>函数的组成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ret_type fun_name(para,*) //ret_type是返回类型，fun_name函数名，括号内为函数参数</span><br><span class="line">&#123;</span><br><span class="line">	statement; //语句项/函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写一个能够寻找二数中较大值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">get_max(int x, int y) //使用int类型接收数值x，y</span><br><span class="line">&#123;</span><br><span class="line">	int z = 0;</span><br><span class="line">	<span class="keyword">if</span> (x &gt; y)</span><br><span class="line">		z = x;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		z = y;</span><br><span class="line">	<span class="built_in">return</span> z;  //返回较大值z</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">	int a = 10;</span><br><span class="line">	int b = 20;</span><br><span class="line">	//scanf(<span class="string">&quot;%d%d&quot;</span>,&amp;a,&amp;b);  //输入整形以代替ab</span><br><span class="line">	int max = get_max(a, b); //将a，b的值返回给get_max，而后<span class="built_in">return</span> z的值回给此处给max赋值</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;max = %d\n&quot;</span>, max);</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>设计一个函数用以交换整形的内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Void swap(int* pa,int* pb) //void表示函数不返回值</span><br><span class="line">&#123;</span><br><span class="line">	int z = 0;</span><br><span class="line">	z = *pa;</span><br><span class="line">	*pa = *pb;</span><br><span class="line">	*pb = z;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">	int a = 10;</span><br><span class="line">	int* pa = &amp;a;</span><br><span class="line">	int b = 20;</span><br><span class="line">	int* pb = &amp;a;</span><br><span class="line">	//scanf(<span class="string">&quot;%d%d&quot;</span>,a,b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;交换前 a = %d b = %d\n&quot;</span>,a,b);</span><br><span class="line">	swap(a,b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;交换后 a = %d b = %d\n&quot;</span>,a,b);</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><h4 id="实际参数（实参）"><a href="#实际参数（实参）" class="headerlink" title="实际参数（实参）"></a>实际参数（实参）</h4><p>传递给函数的数值为实参，比如上文中的swap(a,b)中的ab。此为真实传递给函数的参数，可以使常量、变量、表达式、函数等。在进行函数调用时，必须有实参传递给函数。<br>表达式示例：2+4<br>函数示例：get_max(4,7)</p>
+<h4 id="形式参数（形参）"><a href="#形式参数（形参）" class="headerlink" title="形式参数（形参）"></a>形式参数（形参）</h4><p>实参传递给形参，是函数名括号后的变量。形参只有在调用过程中才实例化。swap(int x,int y)括号内的便是形参，仅做一个形式，在调用函数实参传递前，形参没有意义。在调用完成后被自动摧毁，形参尽在函数内有效。</p>
+<p>调用方式有两种：传值调用与传址调用。函数的实参与形参占有不同内存块，对形参的修改不影响实参。传值调用不可影响外部数据，传址可以。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">int is_prime(int n)</span><br><span class="line">&#123;</span><br><span class="line">	int j = 0;</span><br><span class="line">	<span class="keyword">for</span> (j = 2; j &lt; n; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (n % j == 0)</span><br><span class="line">			<span class="built_in">return</span> 0;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 1;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">	int i = 0;</span><br><span class="line">	int count = 0;</span><br><span class="line">	<span class="keyword">for</span> (i = 100; i &lt;= 200; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		//判断i是否为素数</span><br><span class="line">		<span class="keyword">if</span> (is_prime(i) == 1)</span><br><span class="line">		&#123;</span><br><span class="line">			count++;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;count %d\n&quot;</span>, count);</span><br><span class="line">		<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">int is_leap_year(int x)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> ((x % 400 == 0) || (x % 4 == 0 &amp;&amp; x % 100 != 0)) //使用!来取非值</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">return</span> 1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">return</span> 0;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">	int y = 0;</span><br><span class="line">	<span class="keyword">for</span> (y = 1000; y &lt;= 2000; y++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (is_leap_year(y) == 1)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot; % d &quot;</span>,y);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数内也可简写为return ((x % 400 &#x3D;&#x3D; 0) || (x % 4 &#x3D;&#x3D; 0 &amp;&amp; x % 100 !&#x3D; 0));<br>当数值满足表达式时，也可返回一个真值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">int binary_search(int a[], int k, int s)</span><br><span class="line">&#123;</span><br><span class="line">	int left = 0;</span><br><span class="line">	int right = s - 1;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (left &lt;= right)</span><br><span class="line">	&#123;</span><br><span class="line">		int mid = (left + right) / 2;</span><br><span class="line">		<span class="keyword">if</span> (a[mid] &gt; k)</span><br><span class="line">		&#123;</span><br><span class="line">			right = mid - 1;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (a[mid] &lt; k)</span><br><span class="line">		&#123;</span><br><span class="line">			left = mid + 1;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">return</span> mid;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> -1; //找不到</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">	int arr[] = &#123; 1,2,3,4,5,6,7,8,9,10 &#125;;</span><br><span class="line">	int key = 20;</span><br><span class="line">	//找到则返回数组下标</span><br><span class="line">	int sz = sizeof(arr) / sizeof(arr[0]);</span><br><span class="line">	int ret = binary_search(arr, key, sz);</span><br><span class="line">	<span class="keyword">if</span> (-1 == ret)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;找不到\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>数组arr传参，实际仅传出第一个元素的地址</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/06/C11/" data-id="cl8vvyobu00003gqw2ccg0u7u" data-title="2022.10.5笔记" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/10/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/10/06/C11/">2022.10.5笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/06/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
